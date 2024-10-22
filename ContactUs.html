@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+        body {
+    background-color: #f8f9fa;
+    font-family: Arial, sans-serif;
+}
+
+.container {
+    max-width: 600px;
+    background-color: white;
+    padding: 20px;
+    margin: 40px auto;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+    color: #007bff;
+}
+
+.dynamic-section {
+    display: none;
+}
+
+    </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MMRTECHSOLUTIONS</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+</head>
+<body>
+    <div class="container">
+        <h2 class="text-center mt-4">Contact Us</h2>
+        <form id="contactForm" class="mt-4">
+            <div class="mb-3">
+                <label for="fullName" class="form-label">Full Name:</label>
+                <input type="text" class="form-control" id="fullName" name="fullName" required>
+            </div>
+
+            <div class="mb-3">
+                <label for="email" class="form-label">Email:</label>
+                <input type="email" class="form-control" id="email" name="email" required>
+            </div>
+
+            <div class="mb-3">
+                <label for="phone" class="form-label">Phone Number:</label>
+                <input type="tel" class="form-control" id="phone" name="phone" required>
+            </div>
+
+            <div class="mb-3">
+                <label for="inquiryType" class="form-label">Inquiry Type:</label>
+                <select class="form-select" id="inquiryType" name="inquiryType" onchange="showFields()" required>
+                    <option value="">Select Inquiry Type</option>
+                    <option value="general">General Inquiry</option>
+                    <option value="support">Support</option>
+                    <option value="sales">Sales</option>
+                </select>
+            </div>
+
+            <!-- General Inquiry fields -->
+            <div id="generalFields" class="dynamic-section d-none">
+                <div class="mb-3">
+                    <label for="generalMessage" class="form-label">Your Message:</label>
+                    <textarea class="form-control" id="generalMessage" name="generalMessage" rows="4"></textarea>
+                </div>
+            </div>
+
+            <!-- Support fields -->
+            <div id="supportFields" class="dynamic-section d-none">
+                <div class="mb-3">
+                    <label for="issueType" class="form-label">Issue Type:</label>
+                    <select class="form-select" id="issueType" name="issueType">
+                        <option value="technical">Technical Issue</option>
+                        <option value="billing">Billing Issue</option>
+                    </select>
+                </div>
+                <div class="mb-3">
+                    <label for="issueDescription" class="form-label">Issue Description:</label>
+                    <textarea class="form-control" id="issueDescription" name="issueDescription" rows="4"></textarea>
+                </div>
+            </div>
+
+            <!-- Sales fields -->
+            <div id="salesFields" class="dynamic-section d-none">
+                <div class="mb-3">
+                    <label for="productInterest" class="form-label">Product of Interest:</label>
+                    <input type="text" class="form-control" id="productInterest" name="productInterest">
+                </div>
+                <div class="mb-3">
+                    <label for="budget" class="form-label">Estimated Budget:</label>
+                    <input type="number" class="form-control" id="budget" name="budget">
+                </div>
+            </div>
+
+            <div class="mb-3 text-center">
+                <button type="submit" class="btn btn-primary">Submit</button>
+            </div>
+        </form>
+    </div>
+
+    <script>
+        function showFields() {
+    const inquiryType = document.getElementById('inquiryType').value;
+    
+    // Get all dynamic sections
+    const generalFields = document.getElementById('generalFields');
+    const supportFields = document.getElementById('supportFields');
+    const salesFields = document.getElementById('salesFields');
+
+    // Hide all fields by default
+    generalFields.classList.add('d-none');
+    supportFields.classList.add('d-none');
+    salesFields.classList.add('d-none');
+
+    // Show relevant section based on selected inquiry type
+    if (inquiryType === 'general') {
+        generalFields.classList.remove('d-none');
+    } else if (inquiryType === 'support') {
+        supportFields.classList.remove('d-none');
+    } else if (inquiryType === 'sales') {
+        salesFields.classList.remove('d-none');
+    }
+}
+
+// Form submission (Optional)
+document.getElementById('contactForm').addEventListener('submit', function(event) {
+    event.preventDefault();
+    alert('Form submitted successfully!');
+});
+
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

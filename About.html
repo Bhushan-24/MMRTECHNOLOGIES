@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - Dynamic Company</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <style>
+        
+        .about-header {
+            background: url('https://via.placeholder.com/1920x600') no-repeat center center;
+            background-size: cover;
+            padding: 100px 0;
+            color: white;
+            text-align: center;
+        }
+        .about-header h1 {
+            font-size: 48px;
+            font-weight: bold;
+        }
+        .about-section {
+            padding: 60px 0;
+        }
+        .about-text {
+            font-size: 18px;
+            color: #555;
+            line-height: 1.8;
+        }
+        .team-section {
+            background-color: #f9f9f9;
+            padding: 60px 0;
+        }
+        .team-member {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        .team-member img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+        }
+        .team-member h5 {
+            margin-top: 15px;
+            font-size: 20px;
+            font-weight: bold;
+        }
+        .team-member p {
+            font-size: 14px;
+            color: #777;
+        }
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            .about-header h1 {
+                font-size: 36px;
+            }
+        }
+
+        /* Contact Us section */
+#contact {
+  color: #f8f9fa; /* Light background for contrast */
+  padding: 50px 0;
+}
+
+#contact h2 {
+  color: #343a40; /* Darker color for the heading */
+  text-align: center;
+  margin-bottom: 30px;
+  font-weight: bold;
+}
+
+#contact p {
+  color: #6c757d; /* Subtle color for text */
+}
+
+#contact form {
+color: #ffffff; /* White background for the form */
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Light shadow for depth */
+}
+
+#contact form .form-control {
+  border: 1px solid #ced4da; /* Soft border */
+  border-radius: 4px;
+  margin-bottom: 15px;
+}
+
+#contact form .btn {
+  color: #007bff;
+  border-color: #007bff;
+  color: #ffffff;
+  width: 100%;
+  padding: 10px;
+  font-weight: bold;
+}
+
+#contact form .btn:hover {
+  color: #0056b3;
+  border-color: #004085;
+}
+
+/* Address and Contact Info */
+#contact .col-md-6 h5 {
+  color: #343a40;
+  margin-top: 20px;
+  font-weight: bold;
+}
+
+#contact .col-md-6 p {
+  color: #6c757d;
+}
+
+/* Footer styles */
+footer {
+  background-color: #343a40; /* Dark background */
+  color: #ffffff;
+  padding: 20px 0;
+  text-align: center;
+}
+
+footer p {
+  margin: 0;
+  font-size: 14px;
+}
+
+footer a {
+  color: #f8f9fa; /* Light link color */
+  text-decoration: none;
+  padding: 0 10px;
+}
+
+footer a:hover {
+  color: #adb5bd; /* Lighter color on hover */
+  text-decoration: underline;
+}
+
+@media (max-width: 768px) {
+  /* Mobile responsiveness */
+  #contact {
+    padding: 30px 15px;
+  }
+
+  #contact form {
+    padding: 15px;
+  }
+  
+  footer {
+    font-size: 12px;
+  }
+}
+
+
+    </style>
+</head>
+<body>
+
+<!-- Header Section with Background Image -->
+<header class="about-header">
+    <div class="container">
+        <h1>About Us</h1>
+        <p>Innovating for a better tomorrow</p>
+    </div>
+</header>
+
+<!-- About Section -->
+<section class="about-section">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6">
+                <img src="" alt="Company Image" class="img-fluid">
+            </div>
+            <div class="col-md-6">
+                <h2>Who We Are</h2>
+                <p class="about-text" id="about-company">
+                    <!-- Content will be dynamically loaded here by JavaScript -->
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Team Section -->
+<section class="team-section">
+    <div class="container">
+        <h2 class="text-center mb-5">Meet Our Team</h2>
+        <div id="team-members" class="row">
+            <!-- Team members will be dynamically loaded here -->
+        </div>
+    </div>
+</section>
+
+<!-- Contact Us Section -->
+<section id="contact" class="py-5 bg-light">
+    <div class="container">
+      <h2 class="text-center mb-4">Contact Us</h2>
+      <div class="row">
+        <div class="col-md-6">
+          <form id="contactForm">
+            <div class="mb-3">
+              <label for="name" class="form-label">Name</label>
+              <input type="text" class="form-control" id="name" placeholder="Your Name" required>
+            </div>
+            <div class="mb-3">
+              <label for="email" class="form-label">Email address</label>
+              <input type="email" class="form-control" id="email" placeholder="name@example.com" required>
+            </div>
+            <div class="mb-3">
+              <label for="message" class="form-label">Message</label>
+              <textarea class="form-control" id="message" rows="3" placeholder="Your message here..." required></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary">Submit</button>
+          </form>
+        </div>
+        <div class="col-md-6">
+          <h5>Our Address</h5>
+          <p>123 Main Street, City, Country</p>
+          <h5>Phone</h5>
+          <p>+123 456 7890</p>
+          <h5>Email</h5>
+          <p>info@yourdomain.com</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-dark text-light py-3">
+    <div class="container text-center">
+      <p>&copy; 2024 MMRTECHSOLUTIONS. All Rights Reserved.</p>
+      <p>Follow us: 
+        <a href="#" class="text-light me-2">Facebook</a>  
+        <a href="#" class="text-light me-2">Twitter</a> 
+        <a href="#" class="text-light">LinkedIn</a>
+      </p>
+    </div>
+  </footer>
+<!-- Bootstrap JS and Dependencies -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+<!-- Custom JavaScript -->
+<script>
+    // Dynamic company description content
+    const companyDescription = "At Dynamic Company, we specialize in providing innovative solutions that transform industries. Our team of experts brings together a wealth of experience to develop cutting-edge technologies, ensuring that we remain at the forefront of our field. Whether you're looking for state-of-the-art products or world-class customer service, we have you covered.";
+
+    // Dynamic team members data
+    const teamMembers = [
+        {
+            name: "John Doe",
+            title: "CEO & Founder",
+            image: "https://via.placeholder.com/150",
+        },
+        {
+            name: "Jane Smith",
+            title: "Chief Technology Officer",
+            image: "https://via.placeholder.com/150",
+        },
+        {
+            name: "Michael Brown",
+            title: "Chief Marketing Officer",
+            image: "https://via.placeholder.com/150",
+        }
+    ];
+
+    // Load company description dynamically
+    document.getElementById('about-company').innerText = companyDescription;
+
+    // Load team members dynamically
+    const teamContainer = document.getElementById('team-members');
+    teamMembers.forEach(member => {
+        const memberDiv = document.createElement('div');
+        memberDiv.classList.add('col-md-4', 'team-member');
+        memberDiv.innerHTML = `
+            <img src="${member.image}" alt="${member.name}">
+            <h5>${member.name}</h5>
+            <p>${member.title}</p>
+        `;
+        teamContainer.appendChild(memberDiv);
+    });
+</script>
+
+</body>
+</html>
